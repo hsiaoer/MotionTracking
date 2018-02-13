@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13529" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13507"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SwingWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label height="16" alignment="left" text="Not Recording" textAlignment="center" id="bWr-ao-gMO" userLabel="TitleLabel">
+                            <color key="textColor" red="1" green="0.0" blue="0.029831843470767616" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <label width="136" alignment="left" text="Gravity" id="H0m-N6-evH" userLabel="Gravity Label"/>
+                        <label alignment="left" text="0" id="MU2-hJ-tbM" userLabel="GravityValue">
+                            <color key="textColor" red="0.085898444056510925" green="0.95968544483184814" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </label>
+                        <label alignment="left" text="User Acceleration" id="OPG-cU-Trd" userLabel="UALabel"/>
+                        <label alignment="left" text="0" id="2v7-yG-cfh" userLabel="UAValue">
+                            <color key="textColor" red="0.085898444059999995" green="0.95968544479999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </label>
+                        <label alignment="left" text="Rotation" id="PYT-9A-DzN" userLabel="RotationLabel"/>
+                        <label alignment="left" text="0" id="5PT-2G-Dgg" userLabel="RotationValue">
+                            <color key="textColor" red="0.085898444059999995" green="0.95968544479999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </label>
+                        <label alignment="left" text="Attitude" id="63n-R7-638" userLabel="AttitudeLabel"/>
+                        <label alignment="left" text="0" id="R4A-xH-fs5" userLabel="AttitudeValue">
+                            <color key="textColor" red="0.085898444059999995" green="0.95968544479999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </label>
+                    </items>
+                    <menu key="menu" id="KMo-df-ZHz">
+                        <items>
+                            <menuItem title="Start Workout" icon="accept" id="LDQ-Ky-vho">
+                                <connections>
+                                    <action selector="start" destination="AgC-eL-Hgc" id="c3c-Xx-z8h"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Stop Workout" icon="decline" id="5TK-XJ-TJp">
+                                <connections>
+                                    <action selector="stop" destination="AgC-eL-Hgc" id="hAj-W9-Ubf"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="attitudeLabel" destination="R4A-xH-fs5" id="lmE-rP-JT0"/>
+                        <outlet property="gravityLabel" destination="MU2-hJ-tbM" id="5KU-li-kBk"/>
+                        <outlet property="rotationLabel" destination="5PT-2G-Dgg" id="AWR-Gi-B9r"/>
+                        <outlet property="titleLabel" destination="bWr-ao-gMO" id="Jwr-l0-Q0U"/>
+                        <outlet property="userAccelLabel" destination="2v7-yG-cfh" id="LL1-5Z-v0r"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="219" y="344"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="SwingWatch_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
